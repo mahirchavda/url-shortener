@@ -1,4 +1,18 @@
 {
-    "jira": "http://10.1.1.1/",
-    "confluence": "http://10.1.1.2/"
+    "j, jira": {
+        "default": "http://10.1.1.1/",
+        "suffix": "browse/",
+        "prefix": ""
+    },
+    "c, confluence": {
+        "default": "http://10.1.1.2/",
+        "suffix": "dosearchsite.action?queryString=",
+        "prefix": "display/PROJ/",
+        "project1": {
+            "default": "project1"
+        }
+    },
+    "bb, bitbucket": {
+        "default": "https://10.1.1.3"
+    }
 }
