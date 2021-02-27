@@ -1,7 +1,12 @@
-FROM python:3.7
-RUN pip install Flask
-RUN useradd -ms /bin/bash admin
-USER admin
-WORKDIR /app
-COPY app /app
-CMD ["python", "app.py"]
+FROM python:3.7-alpine
+
+WORKDIR /work
+
+COPY requirements.txt requirements.txt
+
+RUN pip install -r requirements.txt
+
+COPY config config
+COPY app app
+
+CMD ["python", "app/app.py"]

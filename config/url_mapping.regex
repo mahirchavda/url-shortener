@@ -15,3 +15,5 @@
 
 # BitBucket
 /(bb|bitbucket) => {bitbucket}
+/(bb|bitbucket)/code/(?P<query>.*) => {bitbucket}/search?q={{query}}
+/(bb|bitbucket)/(?P<query>.*) => {bitbucket}/dashboard/repositories?search={{query}}
