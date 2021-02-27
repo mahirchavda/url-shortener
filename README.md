@@ -8,10 +8,10 @@
 
 ##### For Windows machine: #####
 1) Open **C:\Windows\System32\Drivers\etc\hosts** file in the editor as an admin.
-2) Append the below content in the file.
+2) Append the below content in the file. Update _SERVER_IP_ADDRESS_ with the actual _Server address_
 ```
 # URL Shortener
-<Server_IP> go
+SERVER_IP_ADDRESS go
 ```
 3) Save the file.
 
