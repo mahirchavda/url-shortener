@@ -4,16 +4,22 @@ import json
 class MappiManager:
     def __init__(self, mappi_file):
         self.mappi_file = mappi_file
-        self._mappi = self._load_mappi_json()
+        self.reload_mappi_dict()
 
     def _load_mappi_json(self):
         with open(self.mappi_file) as fp:
             data = json.load(fp)
         return data
 
-    def reload_mappi_dict(self):
-        self._mappi = self._load_mappi_json()
+    def build_mappi(self, data):
+        temp_mappi = {}
+        for keys, val in data.items():
+            for key in map(lambda x: x.strip(), keys.split(',')):
+                temp_mappi[key] = val
+        return temp_mappi
 
-    def get_long_url(self, nickname):
-        url = self._mappi.get(nickname)
-        return url
+    def reload_mappi_dict(self):
+        self._original_mappi = self._load_mappi_json()
+        self._mappi = self.build_mappi(self._original_mappi)
+
+
