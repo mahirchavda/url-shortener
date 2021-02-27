@@ -16,7 +16,8 @@ class Logger:
 
         file_handler = logging.FileHandler(const.LOG_FILE)
         formatter = logging.Formatter(
-            "%(asctime)s - %(process)d - %(threadName)s - %(name)s - %(levelname)s - %(message)s")
+            "%(asctime)s - %(process)d - %(threadName)s - %(name)s - %(levelname)s - %(message)s"
+        )
         file_handler.setFormatter(formatter)
         logger.addHandler(file_handler)
         logger.setLevel(level)

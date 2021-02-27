@@ -37,14 +37,19 @@ class MappiManager:
                     mappi.append((regex, url))
                 else:
                     logger.error(
-                        "Invalid entry at (line no={}, content={})".format(line_no, line))
+                        "Invalid entry at (line no={}, content={})".format(
+                            line_no, line
+                        )
+                    )
         return mappi
 
     def _build_mappi(self, nickname_file, mappi_file):
         self._nickname = self.load_nickname(nickname_file)
         raw_mappi = self.load_mappi(mappi_file)
-        self._mappi = [(item1+"(/)?$", item2.format(**self._nickname))
-                       for item1, item2 in raw_mappi]
+        self._mappi = [
+            (item1 + "(/)?$", item2.format(**self._nickname))
+            for item1, item2 in raw_mappi
+        ]
 
     def get_redirect_url(self, short_url):
         for regex, url in self._mappi:
