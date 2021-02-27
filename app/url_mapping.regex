@@ -1,0 +1,17 @@
+# Order matters, Case Insensitive
+
+
+# Jira
+/(j|jira) => {jira}
+/(timeshit|timesheet) => {jira}/plugins/servlet/aio-ts/bridge/pages/aiotimeentry
+/(j|jira)/(?P<jira_id>[A-Za-z0-9]+-\d+) => {jira}/browse/{{jira_id}}
+
+
+# Confluence
+/(c|confluence) => {confluence}
+/(c|confluence)/project1 => {confluence}/display/PROJ/project1
+/(c|confluence)/(?P<query>.*) => {confluence}/dosearchsite.action?queryString={{query}}
+
+
+# BitBucket
+/(bb|bitbucket) => {bitbucket}
