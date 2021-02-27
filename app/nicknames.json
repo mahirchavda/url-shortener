@@ -1,0 +1,5 @@
+{
+    "jira": "http://10.1.1.1",
+    "confluence": "http://10.1.1.2",
+    "bitbucket": "https://10.1.1.3"
+}
